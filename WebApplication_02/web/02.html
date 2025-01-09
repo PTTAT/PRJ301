@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>bt02</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>HTML Forms</h1>
+        <form action="index.html">
+            Textbox <input type="text" name="textbox" value="" size="5"/><br/>
+            Password <input type="password" name="password" value="" /><br/>
+            Hidden <input type="hidden" name="hidden" value="" /><br/>
+            Male <input type="checkbox" name="male" value="ON" checked="checked"/><br/>
+            Status 
+            <input type="radio" name="status" value="Single" checked="checked"/>Single<br/>
+            <input type="radio" name="status" value="Married" />Married<br/>
+            <input type="radio" name="status" value="Divorsed" />Divorsed<br/>
+            ComboBox <select name="combo">
+                <option value="Serlvet">JSP and Servlet</option>
+                <option value="EJB">EJB</option>
+            </select><br/>
+            Multiple <select name="multiple">
+                <option value="Serlvet">JSP and Servlet</option>
+                <option value="EJB">EJB</option>
+                <option value="Java">Core Java</option>
+            </select><br/>
+            TextArea <textarea name="textarea" rows="4" cols="20">
+                This is a form parameter demo !!!
+            </textarea><br/>
+            <input type="submit" name="txtB"/>
+            <input type="submit" name="action" value="Register"/>
+            <input type="reset" name="txtB"/>
+            <input type="button" name="txtB" value="JavaScript" onclick=""/>
+        </form>
+    </body>
+</html>
