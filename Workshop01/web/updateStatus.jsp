@@ -68,22 +68,22 @@
             <% if (AuthUtils.isLoggedIn(session)) {
                 UserDTO user = AuthUtils.getUser(session);
                 if (AuthUtils.isAdmin(session)) {
-                    String successMessage = (String) request.getAttribute("SUCCESS_MESSAGE");
-                    String errorMessage = (String) request.getAttribute("ERROR_MESSAGE");
+                    String successStatus = (String) request.getAttribute("SUCCESS_STATUS");
+                    String errorStatus = (String) request.getAttribute("ERROR_STATUS");
             %>
                 <h1>Update Project Status</h1>
                 
-                <% if (successMessage != null) { %>
+                <% if (successStatus != null) { %>
                     <div class="message success">
-                        <%= successMessage %>
+                        <%= successStatus %>
                         <br/>
                         <a href="MainController?action=search" class="back-link">Back to Project List</a>
                     </div>
                 <% } %>
                 
-                <% if (errorMessage != null) { %>
+                <% if (errorStatus != null) { %>
                     <div class="message error">
-                        <%= errorMessage %>
+                        <%= errorStatus %>
                     </div>
                 <% } %>
 
@@ -105,13 +105,13 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" value="Update Status" />
+                        <input type="submit" value="Update" />
                     </div>
                 </form>
 
-                <% if (successMessage != null) { %>
+                <% if (successStatus != null) { %>
                     <div class="message success">
-                        <%= successMessage %>
+                        <%= successStatus %>
                         <br/>
                         <a href="MainController?action=search" class="back-link">Back to Project List</a>
                     </div>

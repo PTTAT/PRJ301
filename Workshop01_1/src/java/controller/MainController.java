@@ -156,18 +156,18 @@ public class MainController extends HttpServlet {
                     boolean success = projectDAO.update(project);
 
                     if (success) {
-                        request.setAttribute("SUCCESS_STATUS", "Project status updated successfully!");
+                        request.setAttribute("SUCCESS_MESSAGE", "Project status updated successfully!");
                         // Refresh the project list after update
                         search(request, response);
 
                     } else {
-                        request.setAttribute("ERROR_STATUS", "Failed to update project status.");
+                        request.setAttribute("ERROR_MESSAGE", "Failed to update project status.");
 
                     }
                     url = "updateStatus.jsp";
                 } catch (Exception e) {
-                    
-                    request.setAttribute("ERROR_STATUS", "An error occurred while updating project status.");
+                    log("Error updating project status: " + e.toString());
+                    request.setAttribute("ERROR_MESSAGE", "An error occurred while updating project status.");
                     url = "updateStatus.jsp";
                 }
              
