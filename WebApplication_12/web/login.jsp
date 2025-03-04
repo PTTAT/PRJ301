@@ -1,9 +1,3 @@
-<%-- 
-    Document   : login
-    Created on : Feb 13, 2025, 11:10:58 AM
-    Author     : trana
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -96,6 +90,11 @@
                     </div>
 
                     <button type="submit" class="submit-btn">Đăng nhập</button>
+                    
+                    <%
+                        String message = request.getAttribute("message")+"";
+                    %>
+                    <%=message.equals("null")?"":message%>
                 </form>
             </div>
         </div>
