@@ -75,36 +75,32 @@
 
 <footer class="footer">
     <div class="footer-container">
-        <!--        <div class="footer-section">
-                    <h3>Về chúng tôi</h3>
-                    <p>Shop Online là điểm đến tin cậy cho những sản phẩm chất lượng với giá cả hợp lý. Chúng tôi cam kết mang đến trải nghiệm mua sắm tốt nhất cho khách hàng.</p>
-                </div>-->
+       
 
         <div class="footer-section">
             <h3>Liên kết nhanh</h3>
             <ul class="footer-links">
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Giới Thiệu</a></li>
-                <li><a href="#">Bảng giá</a></li>
-                <li><a href="#">Khách hàng</a></li>               
-                <li><a href="#">Liên hệ</a></li>
+                <li><a href="index.jsp">Trang chủ</a></li>
+                <li><a href="MainController?action=viewServices">Giới Thiệu</a></li>
+                <li><a href="MainController?action=viewServices">Bảng giá</a></li>             
+                <li><a href="AddLienHe.jsp">Liên hệ</a></li>
             </ul>
         </div>
 
         <div class="footer-section">
             <h3>Liên hệ</h3>
-            <p>Địa chỉ: 123 Đường ABC, Quận XYZ</p>
-            <p>Email: contact@shoponline.com</p>
-            <p>Điện thoại: (84) 123-456-789</p>
+            <p>76 Lê Đức Thọ, Quận 1, TP.HCM</p>
+            <p>📞 (84) 0908042***</p>
+            <p>✉️ info@nhakhoa.com</p>
         </div>
 
         <div class="footer-section">
             <h3>Chính sách</h3>
-            
+
             <ul class="footer-links">
-                <li><a href="#">- Chính sách bảo mật</a></li>
-                <li><a href="#">- Chính sách ưu đãi</a></li>
-                <li><a href="#">- Chính sách bảo hành</a></li>
+                <li><a href="#">Chính sách bảo mật</a></li>
+                <li><a href="#">Chính sách ưu đãi</a></li>
+                <li><a href="#">Chính sách bảo hành</a></li>
             </ul>
         </div>
 

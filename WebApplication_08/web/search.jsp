@@ -21,6 +21,6 @@
         <form action="#">
             Search Value: <input type="submit" name="txtSearchValue"/><br/>
             <input type="submit" name="Search"/>
-        </form> <h1>Hello World!</h1>
+        </form> 
     </body>
 </html>

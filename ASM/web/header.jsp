@@ -4,6 +4,8 @@
     Author     : trana
 --%>
 
+<%@page import="utils.AuthUtils"%>
+<%@page import="dto.UserDTO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <style>
     * {
@@ -43,9 +45,9 @@
         list-style: none;
         gap: 2rem;
     }
-    
- 
-    
+
+
+
     .menu {
         display: flex;
         list-style: none;
@@ -92,22 +94,29 @@
     %>
     <div class="container">
         <nav class="nav">
-            <a href="#" class="logo">Nha Khoa</a>
+            <a href="index.jsp" class="logo">Nha Khoa</a>
             <ul class="menu">
-                <li class="menu-item"><a href="#">Trang chủ</a></li>
+                <li class="menu-item"><a href="index.jsp">Trang chủ</a></li>
                 <li class="menu-item"><a href="#">Giới Thiệu</a></li>
-                <li class="menu-item"><a href="#">Dịch vụ</a></li>
-                <li class="menu-item"><a href="#">Bảng giá</a></li>
-                <li class="menu-item"><a href="#">Khách hàng</a></li>
-                <li class="menu-item"><a href="#">Liên hệ</a></li>
+                <li class="menu-item"><a href="MainController?action=viewServices">Dịch vụ</a></li>
+                <li class="menu-item"><a href="MainController?action=viewServices">Bảng giá</a></li>
+                <li class="menu-item"><a href="AddLienHe.jsp">Liên hệ</a></li>
             </ul>
+            <%--
             <div class="search-bar">
                 <input type="text" class="search-input" placeholder="Tìm kiếm...">
                 <button class="search-button">🔍</button>
-            </div>
+            </div>--%>
             <ul class="dt">
-                <li class="menu-item"><a href="login.jsp">Đăng nhập</a></li>
-                
+                <% if (AuthUtils.isNotLog(session)) { %>
+                    <li class="menu-item"><a href="login.jsp">Đăng nhập</a></li>
+                    <li class="menu-item"><a href="DangKyBN.jsp">Đăng ký</a></li>
+                <% } else { 
+                    UserDTO user = AuthUtils.getUser(session);
+                %>
+                    <li class="menu-item"><span style="color: #fff;">Welcome <%=user.getName()%></span></li>
+                    <a class="menu-item" href="MainController?action=logout"><span style="color: #fff;">Log out</span></a>
+                <% } %>
             </ul>
         </nav>
     </div>

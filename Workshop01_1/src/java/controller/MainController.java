@@ -57,7 +57,7 @@ public class MainController extends HttpServlet {
         //
         HttpSession session = request.getSession();
         if (AuthUtils.isLoggedIn(session)) {
-            request.getSession().invalidate(); // Hủy bỏ session
+            request.getSession().invalidate(); 
             url = "login.jsp";
         }
         //
@@ -107,11 +107,6 @@ public class MainController extends HttpServlet {
                     request.setAttribute("txtProjectName_error", "Project Name cannot be empty.");
                 }
 
-                if (description == null || description.trim().isEmpty()) {
-                    checkError = true;
-                    request.setAttribute("txtDescription_error", "Description cannot be empty.");
-                }
-
                 if (status == null || status.trim().isEmpty()) {
                     checkError = true;
                     request.setAttribute("txtStatus_error", "Status cannot be empty.");
@@ -156,18 +151,18 @@ public class MainController extends HttpServlet {
                     boolean success = projectDAO.update(project);
 
                     if (success) {
-                        request.setAttribute("SUCCESS_MESSAGE", "Project status updated successfully!");
-                        // Refresh the project list after update
+                        request.setAttribute("SUCCESS_UPDATE", "Project status updated successfully!");
+                        
                         search(request, response);
 
                     } else {
-                        request.setAttribute("ERROR_MESSAGE", "Failed to update project status.");
+                        request.setAttribute("ERROR_UPDATE", "Failed to update project status.");
 
                     }
                     url = "updateStatus.jsp";
                 } catch (Exception e) {
-                    log("Error updating project status: " + e.toString());
-                    request.setAttribute("ERROR_MESSAGE", "An error occurred while updating project status.");
+                   
+                    request.setAttribute("ERROR_UPDATE", "An error occurred while updating project status.");
                     url = "updateStatus.jsp";
                 }
              
